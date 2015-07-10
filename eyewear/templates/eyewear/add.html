@@ -1,0 +1,14 @@
+<a href="http://127.0.0.1:8000/eyewear/">back</a>
+
+<form method="post" action="" enctype="multipart/form-data">
+    {{ formset.management_form }}
+    {% for form in formset %}
+        <ul>
+            {{ form.id }}
+            name {{ form.name }}
+            description {{ form.description }}
+            price {{ form.price }}
+        </ul>
+    {% endfor %}
+    <input method="post" type="submit" value="Save" />
+</form>

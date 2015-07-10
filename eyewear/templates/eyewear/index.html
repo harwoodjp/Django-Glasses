@@ -1,0 +1,8 @@
+<h2>Glasses: </h2>
+    <ul>
+    {% for item in item_list %}
+        <li><a href="/eyewear/{{ item.id }}/">{{ item.name }}</a> <a href="/eyewear/edit_item/{{ item.id }}/">{{ "edit" }}</a></li>
+    {% endfor %}
+    </ul>
+<a href="http://127.0.0.1:8000/eyewear/add_item/">add/edit item</a>
+
