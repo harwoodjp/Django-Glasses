@@ -1,0 +1,13 @@
+<a href="http://127.0.0.1:8000/eyewear/">back</a>
+<h2>Saved: </h2>
+    <ul>
+    {% for cart in cart_list %}
+        <li>
+            {{ cart.item }}
+            <a href="/eyewear/cart_remove/{{ cart.id }}/">{{ "remove" }}</a>
+
+        </li>
+    {% endfor %}
+    </ul>
+
+

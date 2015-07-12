@@ -9,5 +9,13 @@ class item(models.Model):
     description = models.CharField(max_length=200)
     price = models.IntegerField(default=0)
     def __str__(self):
-        return self.name
+        summary = self.name + " " + self.description + " " + str(self.price)
+        return summary
+
+class cart(models.Model):
+    item = models.CharField(max_length=200)
+    def __str__(self):
+        return self.item
+
+
 
