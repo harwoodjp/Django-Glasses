@@ -1,16 +1,19 @@
-<a href="http://127.0.0.1:8000/eyewear/add_item/">add/edit view</a>
-<a href="http://127.0.0.1:8000/eyewear/cart_show/">saved</a>
+<div align="right"><a href="http://127.0.0.1:8000/eyewear/"> items</a>
+<a href="http://127.0.0.1:8000/eyewear/all_carts/">carts</a> <a href="http://127.0.0.1:8000/admin/"> admin</a></div>
 
-<h2>Glasses: </h2>
+<h2>Items: </h2>
+
     <ul>
     {% for item in item_list %}
         <li>
             <a href="/eyewear/{{ item.id }}/">{{ item.name }}</a>
             <a href="/eyewear/edit_item/{{ item.id }}/">{{ "edit" }}</a>
-            <a href="/eyewear/cart_add/{{ item.id }}/">{{ "save" }}</a>
+           <!-- <a href="/eyewear/cart_add/{{ item.id }}/">{{ "" }}</a> -->
 
         {{ "" }}
         </li>
     {% endfor %}
     </ul>
 
+
+ <a href="http://127.0.0.1:8000/eyewear/add_item/"> add/edit items</a>

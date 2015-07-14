@@ -1,19 +1,15 @@
 <div align="right"><a href="http://127.0.0.1:8000/eyewear/"> items</a>
 <a href="http://127.0.0.1:8000/eyewear/all_carts/">carts</a> <a href="http://127.0.0.1:8000/admin/"> admin</a></div>
 
-
-
-<a href="http://127.0.0.1:8000/eyewear/">back</a>
-
-<h2>Saved: </h2>
+<h2>{{ cart.owner }}{{ ": " }}{{ cart.name }} </h2>
 
     <ul>
-    {% for cart in cart_list %}
-        <li>
-            {{ cart.item }}
-            <a href="/eyewear/cart_remove/{{ cart.id }}/">{{ "remove" }}</a>
+    {% for cart_item in cart.cart_items.all %}
 
+        <li>
+            <a href="/eyewear/{{ cart_item.item.id }}/">{{ cart_item.item.name }}</a>
         </li>
+
     {% endfor %}
     </ul>
 

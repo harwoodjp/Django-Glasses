@@ -1,11 +1,28 @@
 from django.contrib import admin
 
-from .models import item
+from .models import Item, Cart, Cart2, CartItem
 
 # Register your models here.
+
+admin.site.site_url = "/eyewear/"
 
 class itemAdmin(admin.ModelAdmin):
     fields = ['name', 'description', 'price']
 
+class cartAdmin(admin.ModelAdmin):
+    fields = ['item']
 
-admin.site.register(item, itemAdmin)
+
+class cart2Admin(admin.ModelAdmin):
+    fields = ['owner','name']
+
+
+class CartItemAdmin(admin.ModelAdmin):
+    fields = ['cart','item']
+
+
+admin.site.register(Item, itemAdmin)
+admin.site.register(Cart, cartAdmin)
+admin.site.register(Cart2, cart2Admin)
+admin.site.register(CartItem, CartItemAdmin)
+
