@@ -7,38 +7,41 @@
 
 <div id="wrap">
 
-<h2>{{ "Add to Cart  " }} {{ cart.id }}</h2>
-
-
     <div id="left_col">
+
+
+
 <h2>Items: </h2>
 
     <ul>
     {% for item in item_list %}
         <li>
             <a href="/eyewear/{{ item.id }}/">{{ item.name }}</a>
-            <a href="/eyewear/cart2_show/{{ cart.id }}/select_item/{{ item.id }}">{{ "add" }}</a>
-
-
-        {{ "" }}
         </li>
     {% endfor %}
     </ul>
+
+
+ <a href="http://127.0.0.1:8000/eyewear/add_item/"> add/edit items</a>
+
+
     </div>
 
-<div id="right_col">
-<p class="columnTwo">
-<h2>{{ cart.name }}{{ ": " }} </h2>
 
+    <div id="right_col">
+
+
+<h2> Carts: </h2>
     <ul>
-    {% for cart_item in cart.cart_items.all %}
-
+    {% for cart in cart_list %}
         <li>
-            <a href="/eyewear/{{ cart_item.item.id }}/">{{ cart_item.item.name }}</a>
-            <a href="/eyewear/cart2_show/{{ cart.id }}/select_item/{{ cart_item.item.id }}/cartitem_remove/">{{ "remove" }}</a>
-        </li>
+            <a href="/eyewear/cart2_show/{{ cart.id }}/">{{ cart.name }}</a>
+            <a href="/eyewear/cart2_show/{{ cart.id }}/select_item/">{{ " add to cart" }}</a>
 
+        </li>
     {% endfor %}
     </ul>
+
+<a href="/eyewear/add_cart/">{{ "add/edit carts" }}</a>
     </div>
-</div>
+

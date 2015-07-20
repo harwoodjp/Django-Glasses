@@ -11,18 +11,16 @@ from .models import Item, Cart2, CartItem
 def index(request):
     item_list = Item.objects.all()
     cart_list = Cart2.objects.all()
-    clSize = len(cart_list)
     template = loader.get_template('eyewear/index.html')
     context = RequestContext(request, {
         'item_list': item_list,
         'cart_list': cart_list,
-        'clSize' : clSize,
     })
     return HttpResponse(template.render(context))
 
 def detail(request, id):
-    thisItem = Item.objects.get(pk=id)
-    return render(request, 'eyewear/detail.html', {'item': thisItem})
+    item = Item.objects.get(pk=id)
+    return render(request, 'eyewear/detail.html', {'item': item})
 
 def add_item(request):
 
@@ -109,6 +107,14 @@ def cartitem_remove(request, cart_id, item_id):
     CartItem.objects.filter(cart=cart, item=item).delete()
     returnURL = '/eyewear/cart2_show/' + str(cart_id) + '/select_item/'
     return redirect(returnURL)
+
+
+def delete_item(request, id):
+    Item.objects.filter(pk=id).delete()
+    returnURL = '/eyewear/'
+    return redirect(returnURL)
+
+
 
 
   #        OLD CART views

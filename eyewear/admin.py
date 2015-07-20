@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Item, Cart, Cart2, CartItem
+from .models import Item, Cart2, CartItem
 
 # Register your models here.
 
@@ -22,7 +22,6 @@ class CartItemAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Item, itemAdmin)
-admin.site.register(Cart, cartAdmin)
 admin.site.register(Cart2, cart2Admin)
 admin.site.register(CartItem, CartItemAdmin)
 

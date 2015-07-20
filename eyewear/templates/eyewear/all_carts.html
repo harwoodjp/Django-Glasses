@@ -1,18 +1,26 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'eyewear/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'eyewear/list.css' %}" />
+
+
 <div align="right"><a href="http://127.0.0.1:8000/eyewear/"> items</a>
 <a href="http://127.0.0.1:8000/eyewear/all_carts/">carts</a> <a href="http://127.0.0.1:8000/admin/"> admin</a></div>
 
 
 
-<h2> Carts: </h2>
-    <ul>
+<h2 align="center"> Carts: </h2>
+
+    <ul class="no_indent_or_bullet">
     {% for cart in cart_list %}
-        <li>
-            <a href="/eyewear/cart2_show/{{ cart.id }}/">{{ cart.name }}</a>
-            <a href="/eyewear/cart2_show/{{ cart.id }}/select_item/">{{ " add to cart" }}</a>
+        <li class="fixed-size-rect2">
+             <a href="http://127.0.0.1:8000/eyewear/cart2_show/{{ cart.id }}">   <img src="http://i.imgur.com/yVyKfqt.jpg" class="indent"></a>
+            <span class="element1"><a href="/eyewear/cart2_show/{{ cart.id }}/">{{ cart.name }}</a></span>
+            <span class="element2">by {{ cart.owner }}</span>
+            <span><a href="/eyewear/cart2_show/{{ cart.id }}/select_item/">{{ " Add to cart" }}</a></span>
 
         </li>
     {% endfor %}
     </ul>
 
-<a href="/eyewear/add_cart/">{{ "add/edit carts" }}</a>
+<center><a href="/eyewear/add_cart/">{{ "add/edit carts" }}</a></center>
 

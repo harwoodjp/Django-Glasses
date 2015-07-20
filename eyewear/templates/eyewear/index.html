@@ -1,19 +1,27 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'eyewear/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'eyewear/list.css' %}" />
+
+
 <div align="right"><a href="http://127.0.0.1:8000/eyewear/"> items</a>
 <a href="http://127.0.0.1:8000/eyewear/all_carts/">carts</a> <a href="http://127.0.0.1:8000/admin/"> admin</a></div>
 
-<h2>Items: </h2>
 
-    <ul>
+<h2 align="center"> Items: </h2>
+
+
+    <ul class="no_indent_or_bullet">
     {% for item in item_list %}
-        <li>
-            <a href="/eyewear/{{ item.id }}/">{{ item.name }}</a>
-            <a href="/eyewear/edit_item/{{ item.id }}/">{{ "edit" }}</a>
-           <!-- <a href="/eyewear/cart_add/{{ item.id }}/">{{ "" }}</a> -->
+        <li class="fixed-size-rect">
 
-        {{ "" }}
+             <a href="{{ item.id }}">   <img src="http://i.imgur.com/ZorDPy1.jpg" class="indent"></a>
+            <span class="element1"><a href="http://127.0.0.1:8000/eyewear/{{ item.id }}/">{{ item.name }}</a></span>
+            <span class="element2">{{ item.description }}</span>
+            <span class="element3">{{ "$" }}{{ item.price }}</span>
+            <span><a href="http://127.0.0.1:8000/eyewear/edit_item/{{ item.id }}"><img src="http://i.imgur.com/EEoLoS0.png"></a></span>
+            <span><a href="http://127.0.0.1:8000/eyewear/delete_item/{{ item.id }}"><img src="http://i.imgur.com/Jcj5JyN.png"></a></span>
         </li>
     {% endfor %}
     </ul>
 
-
- <a href="http://127.0.0.1:8000/eyewear/add_item/"> add/edit items</a>
+<center><a href="/eyewear/add_item/">{{ "add/edit glasses" }}</a></center>

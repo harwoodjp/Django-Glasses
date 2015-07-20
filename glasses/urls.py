@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^eyewear/', include('eyewear.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^eyewear/add_item/', include('eyewear.urls')),
+    url(r'^eyewear/delete_item/', include('eyewear.urls')),
     url(r'^eyewear/add_cart/', include('eyewear.urls')),
     url(r'^eyewear/cart_show/', include('eyewear.urls')),
     url(r'^eyewear/cart_remove/(?P<id>[0-9]+)/', include('eyewear.urls')),
