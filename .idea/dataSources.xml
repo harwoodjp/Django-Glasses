@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3793563907">
+  <component name="DataSourceManagerImpl" format="xml" hash="1527205772">
     <data-source source="LOCAL" name="Django default" uuid="7a015d46-29e9-4e93-9a82-ba3e77c83a41">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\j\Desktop\Django\Django_Tutorial\mysite\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\j\Desktop\code\Django\Django_Tutorial\mysite\db.sqlite3</jdbc-url>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/xerial-sqlite-license.txt</url>
@@ -20,6 +20,13 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\j\Desktop\Django\Django_Tutorial\mysite\db.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="SQLite -" uuid="7a33573d-b47b-4b0d-8e44-92a6574dd5af">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>

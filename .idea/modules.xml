@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../HickoryFarms/.idea/HickoryFarms.iml" filepath="$PROJECT_DIR$/../HickoryFarms/.idea/HickoryFarms.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/glasses.iml" filepath="$PROJECT_DIR$/.idea/glasses.iml" />
       <module fileurl="file://$PROJECT_DIR$/../html.css/.idea/html.css.iml" filepath="$PROJECT_DIR$/../html.css/.idea/html.css.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Django_Tutorial/mysite/.idea/mysite.iml" filepath="$PROJECT_DIR$/../Django_Tutorial/mysite/.idea/mysite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../test1/.idea/test1.iml" filepath="$PROJECT_DIR$/../test1/.idea/test1.iml" />
     </modules>
   </component>
 </project>

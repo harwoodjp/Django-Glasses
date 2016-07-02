@@ -2,6 +2,18 @@ from django.db import models
 
 # Create your models here.
 
+class Glasses(models.Model):
+    frame_name = models.TextField(max_length=200)
+    brand = models.TextField(max_length=200, default='')
+    product_group_type = models.TextField(max_length=200, default='')
+    frame_color_type = models.TextField(max_length=200, default='')
+    gender_type = models.TextField(max_length=200, default='')
+    material_type=models.TextField(max_length=200, default='')
+
+
+    def __str__(self):
+        return self.frame_name
+
 
 class Item(models.Model):
     name = models.CharField(max_length=200)

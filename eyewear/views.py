@@ -2,11 +2,13 @@ from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.forms import ModelForm, modelformset_factory
-
-from .models import Item, Cart2, CartItem
+import csv
+from .models import Item, Cart2, CartItem, Glasses
 
 
 # Create your views here.
+
+
 
 def index(request):
     item_list = Item.objects.all()
@@ -17,6 +19,38 @@ def index(request):
         'cart_list': cart_list,
     })
     return HttpResponse(template.render(context))
+
+def show_glasses(request):
+    glasses_list = Glasses.objects.all()
+    template = loader.get_template('eyewear/show_glasses.html')
+    context = RequestContext(request, {
+        'glasses_list': glasses_list,
+    })
+    return HttpResponse(template.render(context))
+
+def import_csv(request):
+    FILE_PATH = 'glasses_csv.csv'
+    f = open(FILE_PATH)
+    next(f)
+    with f as open_csv_file:
+        csv_reader = csv.reader(open_csv_file, delimiter=',')
+        for row in csv_reader:
+
+            frame_name = (row[4]).strip()
+            brand = (row[6]).strip()
+            product_group_type = (row[9]).strip()
+            frame_color_type = (row[10]).strip()
+            gender_type = (row[25]).strip()
+            material_type = (row[27]).strip()
+
+            Glasses(frame_name=frame_name, brand=brand, product_group_type=product_group_type,
+                    frame_color_type=frame_color_type, gender_type=gender_type,
+                    material_type=material_type).save()
+
+    return redirect('/eyewear/show_glasses')
+
+
+
 
 def detail(request, id):
     item = Item.objects.get(pk=id)

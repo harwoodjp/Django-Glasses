@@ -31,5 +31,9 @@ urlpatterns = [
     url(r'^eyewear/cart2_show/(?P<id>[0-9]+)/select_item/$', include('eyewear.urls')),
     url(r'^cart2_show/(?P<cart_id>[0-9]+)/select_item/(?P<item_id>[0-9]+)$', include('eyewear.urls')),
     url(r'^cart2_show/(?P<cart_id>[0-9]+)/select_item/(?P<item_id>[0-9]+)/cartitem_remove/$', include('eyewear.urls')),
+    url(r'^show_glasses/', include(admin.site.urls)),
+    url(r'^import_csv/', include(admin.site.urls)),
+
+
 
 ]

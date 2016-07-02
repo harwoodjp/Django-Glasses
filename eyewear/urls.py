@@ -21,6 +21,10 @@ urlpatterns = [
     url(r'^cart2_show/(?P<cart_id>[0-9]+)/select_item/(?P<item_id>[0-9]+)$', views.add_to_cart, name='add_to_cart'),
     url(r'^cart2_show/(?P<cart_id>[0-9]+)/select_item/(?P<item_id>[0-9]+)/cartitem_remove/$', views.cartitem_remove, name='cartitem_remove'),
     url(r'^all_carts', views.all_carts, name='cart_show'),
+    url(r'^show_glasses', views.show_glasses, name='show_glasses'),
+    url(r'^import_csv', views.import_csv, name='import_csv'),
+
+
 
 
 

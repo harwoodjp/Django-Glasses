@@ -1,0 +1,16 @@
+
+    <ul>
+    {% for glasses in glasses_list %}
+        <li>
+
+            {{ glasses.frame_name }}
+            {{ glasses.brand }}
+            {{ glasses.product_group_type }}
+          {{ glasses.frame_color_type }}
+            {{ glasses.gender_type }}
+            {{ glasses.material_type }}
+
+
+        </li>
+    {% endfor %}
+    </ul>
